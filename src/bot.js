@@ -9,16 +9,16 @@ client.commands = new Collection();
 client.commandArray = [];
 
 // Function Files
-const functionFolders = fs.readdirSync(`./src/functions`);
+const functionFolders = fs.readdirSync(`./src/handlers`);
 
 for (const folder of functionFolders) {
 
     const functionFiles = fs
-        .readdirSync(`./src/functions/${folder}`)
+        .readdirSync(`./src/handlers`)
         .filter(file => file.endsWith('.js'));
         
     for (const file of functionFiles) 
-        require(`./functions/${folder}/${file}`)(client);
+        require(`./handlers/${file}`)(client);
 }
 
 // Initialize functions

@@ -12,7 +12,7 @@ module.exports = (client) => {
 
             // Read folder within events folder and filter files that end with ".js"
             const eventFiles = fs
-                .readdirSync(`./src/events/${folder}`)
+                .readdirSync(`./src/events`)
                 .filter((file) => file.endsWith(".js"));
 
             switch (folder) {
@@ -20,7 +20,7 @@ module.exports = (client) => {
                 // Go to events folder, based on folder were in, execute proper events for folder we are in
                 case "client":
                     for (const file of eventFiles) {
-                        const event = require(`../../events/${folder}/${file}`); 
+                        const event = require(`../../events/${file}`); 
 
                             // If event is on once, tell client that on once, to execute that event
                             if (event.once)
