@@ -30,6 +30,7 @@ module.exports = (client) => {
                 }
         }
 
+        // Client ID and REST
         const clientId = '1032555150348406824';
         const rest = new REST ({ version: '10' }).setToken(process.env.token);
             try {
